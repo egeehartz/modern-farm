@@ -1,7 +1,13 @@
 let storedPlants = []
 
 export const addPlant = (seedObj) => {
-    storedPlants.push(seedObj)
+    if (Array.isArray(seedObj)){
+        for (const type of seedObj){
+            storedPlants.push(type)
+        }
+    } else {
+        storedPlants.push(seedObj)
+    }
 }
 
 
